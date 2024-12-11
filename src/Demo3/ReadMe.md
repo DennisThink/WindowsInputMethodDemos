@@ -1,0 +1,1 @@
+This Demo is based on the second Demo, show how to Register the Windows Register Table and UnRegister it.
