@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+project(WinInputMethodDemo2)
+SET(SOURCE_FILE ./DllMain.cpp ./Log.cpp ./DllServerFunction.cpp)
+add_library(WinInputDemoTwo SHARED  ${SOURCE_FILE})
+target_link_libraries(WinInputDemoTwo ole32.lib)

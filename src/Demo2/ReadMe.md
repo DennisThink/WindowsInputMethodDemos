@@ -1,0 +1,1 @@
+This Demo is based on the first Demo, but we add DllRegisterServer Function.
