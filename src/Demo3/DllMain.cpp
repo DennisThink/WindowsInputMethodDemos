@@ -6,6 +6,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved
 
 #include "Log.hpp"
+#include "GlobalValues.hpp"
 #include <windows.h>
 //+---------------------------------------------------------------------------
 //
@@ -22,11 +23,13 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID pvReserved)
     case DLL_PROCESS_ATTACH:
         LogUtil::OpenLogFile();
         LogUtil::LogInfo("DLL_PROCESS_ATTACH");
+        GlobalValue::SetInstanceHandle(hInstance);
         break;
 
     case DLL_PROCESS_DETACH:
         LogUtil::LogInfo("DLL_PROCESS_DETACH");
         LogUtil::CloseLogFile();
+        //GlobalValue::SetInstanceHandle(INVALID_HINSTANCE);
         break;
 
     case DLL_THREAD_ATTACH:
